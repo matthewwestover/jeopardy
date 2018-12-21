@@ -2,7 +2,7 @@ import React from 'react';
 import CategoryForm from './CategoryForm';
 import Category from './Category';
 import { connect, } from 'react-redux';
-import { Container, Header, Button, List, Icon, } from 'semantic-ui-react';
+import { Container, Header, Button, List, } from 'semantic-ui-react';
 
 class Categories extends React.Component {
   state = { showForm: false, };
@@ -29,7 +29,7 @@ class Categories extends React.Component {
           :
             <List divided relaxed>
               { this.props.categories.map( c => (
-                <Category {...c} />
+                <Category key={c.id} {...c} />
               ))}
             </List>
         }

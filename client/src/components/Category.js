@@ -25,8 +25,8 @@ class Category extends React.Component {
     const { showForm } = this.state;
     return(
         <List.Item key={id}>
-          <List.Content floated="right" verticalAlign="center">
-            <Button.Group style={{ marginTop: "10px"}}>
+          <List.Content floated="right">
+            <Button.Group style={{ marginTop: "10px", position: "relative", zIndex: 999, }}>
               <Button  icon color="blue" onClick={this.toggleForm}>
                 <Icon name="edit" />
                 { showForm ? 'Cancel' : 'Edit' }
@@ -37,11 +37,12 @@ class Category extends React.Component {
               </Button>
             </Button.Group>
           </List.Content>
+          <List.Content>
           {
             showForm ? 
-            <List.Item>
+            <List.Content>
               <CategoryForm closeForm={this.toggleForm} { ...this.props } />
-            </List.Item>
+            </List.Content>
             :
             <List.Content>
               <List.Content floated="left">
@@ -51,6 +52,7 @@ class Category extends React.Component {
               <List.Description as={Link} to={`/categories/${id}`} style={{ color: "grey" }}>Descripton: {description}</List.Description>
             </List.Content>
           }
+          </List.Content>
         </List.Item>
     )
   }

@@ -51,7 +51,7 @@ class CategoryForm extends React.Component {
         />
         <br />
         <br />
-        <Form.Button color="green icon"><Icon name="send" />Save</Form.Button>
+        <Form.Button icon color="green"><Icon name="send" />Save</Form.Button>
       </Form>
     )
   }

@@ -1,20 +1,19 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, } from 'react-redux';
 import { Route, } from 'react-router-dom';
-import Categories from './Categories';
+import Cards from './Cards';
+import { getCards } from '../reducers/cards';
 import { Loader, Dimmer, Segment, } from 'semantic-ui-react';
-import { getCats } from '../reducers/categories';
-import FetchCards from './FetchCards';
 
-class FetchCategories extends React.Component {
+class FetchCards extends React.Component {
   state = { loaded: false }
 
   componentDidMount() {
-    this.props.dispatch(getCats(this.setLoaded));
+    this.props.dispatch(getCards(this.props.match.params.id, this.setLoaded));
   }
 
   setLoaded = () => {
-    this.setState({ loaded: true})
+    this.setState({ loaded: true })
   }
 
   render() {
@@ -23,8 +22,7 @@ class FetchCategories extends React.Component {
     if(loaded) {
       return(
         <div>
-          <Route exact path='/categories' component={Categories} />
-          <Route exact path='/categories/:id' component={FetchCards} />
+          <Route exact path='/categories/:id' component={Cards} />
         </div>
       )
     } else {
@@ -39,4 +37,4 @@ class FetchCategories extends React.Component {
   }
 }
 
-export default connect()(FetchCategories);
+export default connect()(FetchCards);
