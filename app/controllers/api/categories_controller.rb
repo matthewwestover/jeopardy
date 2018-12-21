@@ -2,7 +2,7 @@ class Api::CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :update, :destroy]
 
   def index
-    render json: Category.all.order(title: :asc)
+    render json: Category.all.order(name: :asc)
   end
 
   def show
@@ -36,6 +36,6 @@ class Api::CategoriesController < ApplicationController
     end
 
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :description)
     end
 end

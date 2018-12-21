@@ -1,6 +1,7 @@
 5.times do 
   c = Category.create(
-    name: Faker::TvShows::GameOfThrones.house,
+    name: Faker::Movies::StarWars.call_squadron,
+    description: Faker::Movies::StarWars.quote,
   )
 
   10.times do

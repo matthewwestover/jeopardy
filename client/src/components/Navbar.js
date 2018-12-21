@@ -1,15 +1,25 @@
 import React from "react";
 import { NavLink, } from "react-router-dom";
-import { Menu, } from "semantic-ui-react";
+import { Menu, Button, Icon } from "semantic-ui-react";
 
 const Navbar = () => (
-  <Menu inverted>
+  <Menu inverted color="blue">
     <Menu.Item as={NavLink} exact to='/'>
-        Home
+      <Icon name="home" />
+      Home
     </Menu.Item>
     <Menu.Item as={NavLink} exact to='/categories'>
-        Categories
+      <Icon name="folder" />
+      Categories
     </Menu.Item>
+    <Menu.Menu position='right'>
+      <Menu.Item as={NavLink} exact to='/game'>
+        <Button icon color='green'>
+          <Icon name="game" />{'  '}
+          Play Jeoparody!
+        </Button>
+      </Menu.Item>
+    </Menu.Menu>
   </Menu>
 );
 
