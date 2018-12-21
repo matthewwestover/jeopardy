@@ -23,7 +23,8 @@ ActiveRecord::Schema.define(version: 2018_12_20_230919) do
     t.string "answer3"
     t.string "answer4"
     t.string "correct_answer"
-    t.string "answered", default: "f"
+    t.boolean "answered", default: false
+    t.boolean "show_back", default: false
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

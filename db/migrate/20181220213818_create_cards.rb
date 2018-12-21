@@ -8,7 +8,8 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :answer3
       t.string :answer4
       t.string :correct_answer
-      t.string :answered, default: false
+      t.boolean :answered, default: false
+      t.boolean :show_back, default:false
       t.belongs_to :category, foreign_key: true
 
       t.timestamps

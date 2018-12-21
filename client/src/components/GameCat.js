@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect, } from 'react-redux';
 import { Container, Header, Segment, } from 'semantic-ui-react';
+import GameCardFetch from './GameCardFetch';
 
 
 class GameCat extends React.Component {
@@ -8,9 +9,6 @@ class GameCat extends React.Component {
     const { id, name, description } = this.props.categories;
     return(
       <Container>
-        <Header as='h1' textAlign="center">Jeoparody!</Header>
-        <hr />
-        <br />
         {
           this.props.categories.map( c => (
             <Segment>
@@ -18,7 +16,7 @@ class GameCat extends React.Component {
               <Header.Content>{c.name}</Header.Content>
               <Header.Subheader textAlign="center">{c.description}</Header.Subheader>
               </Header>
-              {/* <GameCardFetch catId={c.id}  />  */}
+              <GameCardFetch catId={c.id}  /> 
             </Segment>
           ))
         }
