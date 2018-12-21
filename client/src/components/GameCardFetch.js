@@ -15,7 +15,6 @@ class GameCardFetch extends React.Component {
     this.setState({ loaded: true })
   }
 
-
   render() {
     const { loaded } = this.state;
 

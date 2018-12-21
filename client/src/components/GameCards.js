@@ -1,37 +1,25 @@
 import React from 'react';
-import CardForm from './CardForm';
-import CardView from './CardView';
 import { connect, } from 'react-redux';
-import { Link, } from 'react-router-dom';
-import { Container, Header, Button, Card, Icon, } from 'semantic-ui-react';
+import { Container, Card, } from 'semantic-ui-react';
+import GameCard from './GameCard'
 
-class Cards extends React.Component {
-  state = { showForm: false, };
-
-  toggleForm = () => {
-    this.setState( state => {
-      return { showForm: !state.showForm };
-    })
-  }
+class GameCards extends React.Component {
 
   render() {
-    const { showForm } = this.state;
     return(
       <Container>
         <Card.Group centered itemsPerRow={5}>
-          { this.props.cards.map( c => (
-            <Card>
-              {c.points}
-            </Card>
-          ))}
+          { this.props.cards.map( c => {
+           return(<GameCard key={c.id} {...c} />)
+          })}
         </Card.Group>
       </Container>
     )
   }
 }
 
-const mapStateToProps = (store, props) => {
+const mapStateToProps = (store,) => {
   return { cards: store.cards, };
 }
 
-export default connect(mapStateToProps)(Cards);
+export default connect(mapStateToProps)(GameCards);
