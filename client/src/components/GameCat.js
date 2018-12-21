@@ -16,7 +16,7 @@ class GameCat extends React.Component {
               <Header.Content>{c.name}</Header.Content>
               <Header.Subheader textAlign="center">{c.description}</Header.Subheader>
               </Header>
-              <GameCardFetch catId={c.id}  /> 
+              <GameCardFetch catId={c.id} scoreUp={this.props.scoreUp}  /> 
             </Segment>
           ))
         }

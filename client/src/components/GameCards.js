@@ -10,7 +10,7 @@ class GameCards extends React.Component {
       <Container>
         <Card.Group centered itemsPerRow={5}>
           { this.props.cards.map( c => {
-           return(<GameCard key={c.id} {...c} />)
+           return(<GameCard key={c.id} {...c} scoreUp={this.props.scoreUp} />)
           })}
         </Card.Group>
       </Container>

@@ -21,7 +21,7 @@ class GameCardFetch extends React.Component {
     if (loaded) {
       return(
         <div>
-          <GameCards />
+          <GameCards scoreUp={this.props.scoreUp}/>
         </div>
       )
     } else {

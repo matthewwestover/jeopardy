@@ -23,7 +23,7 @@ render() {
   if (loaded) {
     return(
       <div>
-        <GameCat />
+        <GameCat scoreUp={this.props.scoreUp} />
       </div>
     )
   } else {

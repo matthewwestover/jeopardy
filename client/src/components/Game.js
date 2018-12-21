@@ -6,6 +6,11 @@ import { Container, Header, } from 'semantic-ui-react';
 class Game extends React.Component {
   state = { score: 0, };
 
+  scoreUp = (points) => {
+    this.setState( state => {
+      return { score: state.score + points, }
+    })
+  }
 
   render() {
     const { score } = this.state;
@@ -15,7 +20,7 @@ class Game extends React.Component {
         <Header as='h2' textAlign="center">Score: {score}</Header>
         <hr />
         <br />
-        <GameCatFetch />
+        <GameCatFetch scoreUp={this.scoreUp} />
       </Container>
     )
   }
