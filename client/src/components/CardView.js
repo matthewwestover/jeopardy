@@ -15,8 +15,8 @@ class CardView extends React.Component {
   }
 
   handleDelete = () => {
-    const { id, dispatch, } = this.props;
-    dispatch(deleteCard(id));
+    const { catId, id, dispatch, } = this.props;
+    dispatch(deleteCard(catId, id));
   }
 
   render() {

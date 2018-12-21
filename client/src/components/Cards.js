@@ -35,7 +35,7 @@ class Cards extends React.Component {
           :
             <Card.Group centered itemsPerRow={4}>
               { this.props.cards.map( c => (
-                <CardView {...c} />
+                <CardView {...c} catId={this.props.category.id} />
               ))}
             </Card.Group>
         }

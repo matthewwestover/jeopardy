@@ -50,42 +50,39 @@ class CardForm extends React.Component {
         <Form.Input 
           name="points"
           label="Points"
+          type="number"
           defaultValue={points}
           onChange={this.handleChange}
           required
         />
-        <Form.Group>
-          <Form.Input 
-            name="answer1"
-            label="First Answer"
-            defaultValue={answer1}
-            onChange={this.handleChange}
-            required
-          />
-          <Form.Input 
-            name="answer2"
-            label="Second Answer"
-            defaultValue={answer2}
-            onChange={this.handleChange}
-            required
-          />
-        </Form.Group>
-        <Form.Group>
-          <Form.Input 
-            name="answer3"
-            label="Third Answer"
-            defaultValue={answer3}
-            onChange={this.handleChange}
-            required
-          />
-          <Form.Input 
-            name="answer4"
-            label="Fourth Answer"
-            defaultValue={answer4}
-            onChange={this.handleChange}
-            required
-          />
-        </Form.Group>
+        <Form.Input 
+          name="answer1"
+          label="First Answer"
+          defaultValue={answer1}
+          onChange={this.handleChange}
+          required
+        />
+        <Form.Input 
+          name="answer2"
+          label="Second Answer"
+          defaultValue={answer2}
+          onChange={this.handleChange}
+          required
+        />
+        <Form.Input 
+          name="answer3"
+          label="Third Answer"
+          defaultValue={answer3}
+          onChange={this.handleChange}
+          required
+        />
+        <Form.Input 
+          name="answer4"
+          label="Fourth Answer"
+          defaultValue={answer4}
+          onChange={this.handleChange}
+          required
+        />
         <Form.Input 
           name="correct_answer"
           label="Correct Option"
