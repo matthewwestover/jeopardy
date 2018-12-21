@@ -1,9 +1,9 @@
 import React from 'react';
 import CardForm from './CardForm';
-// import CardView from './CardView';
+import CardView from './CardView';
 import { connect, } from 'react-redux';
 import { Link, } from 'react-router-dom';
-import { Container, Header, Button, List, Icon, } from 'semantic-ui-react';
+import { Container, Header, Button, Card, Icon, } from 'semantic-ui-react';
 
 class Cards extends React.Component {
   state = { showForm: false, };
@@ -31,7 +31,7 @@ class Cards extends React.Component {
         <br />
         {
           showForm ?
-            <CardForm closeForm={this.toggleForm} />
+            <CardForm closeForm={this.toggleForm} catId={this.props.category.id} />
           :
             <Card.Group centered itemsPerRow={4}>
               { this.props.cards.map( c => (

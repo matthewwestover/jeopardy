@@ -29,9 +29,9 @@ class CardForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const card = { ...this.state, };
-    const { closeForm, dispatch, } = this.props;
+    const { catId, closeForm, dispatch, } = this.props;
     const func = this.props.id ? updateCard : addCard;
-    dispatch(func(card))
+    dispatch(func(catId, card))
     closeForm();
   }
 
